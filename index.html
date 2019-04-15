@@ -10,35 +10,143 @@
 </head>
 
 <body>
+<div id="container">
+<div id="body">
   <h1>Interaction Techniques</h1>
-  <small>William Glockner, Selena Groh, James Hopkins, & Oliver Newland | COMP171: Human-Computer Interaction | Spring 2019</small>
 
-  <p>Select one or more colors:</p>
-  <form action="/action_page.php">
-    <input type="checkbox" name="color1" value="Black">Black
-    <br>
-    <input type="checkbox" name="color2" value="Blue">Blue
-    <br>
-    <input type="checkbox" name="color3" value="Gray">Gray
-    <br>
-    <input type="checkbox" name="color4" value="Green">Green
-    <br>
-    <input type="checkbox" name="color5" value="Orange">Orange
-    <br>
-    <input type="checkbox" name="color6" value="Purple">Purple
-    <br>
-    <input type="checkbox" name="color7" value="Red">Red
-    <br>
-    <input type="checkbox" name="color8" value="White">White
-    <br>
-    <input type="checkbox" name="color9" value="Yellow">Yellow
-    <br><br>
-    <input type="submit">
-  </form>
+  <div id="interaction-techniques">
+    <h3>Select a Condition</h3>
+    <button onClick="showCondition('checkbox-small')">Checkbox (Small)</button>
+    <button onClick="showCondition('checkbox-large')">Checkbox (Large)</button>
+    <button onClick="showCondition('datalist-small')">Datalist (Small)</button>
+    <button onClick="showCondition('datalist-large')">Datalist (Large)</button>
 
-  <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.7'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+  </div>
+
+  <div id="checkbox-small" class="condition">
+    <h4>Checkbox (Small)</h4>
+    <form>
+      <input type="checkbox" name="color1" value="Black">Black
+      <br>
+      <input type="checkbox" name="color2" value="Blue">Blue
+      <br>
+      <input type="checkbox" name="color3" value="Orange">Orange
+      <br>
+      <input type="checkbox" name="color4" value="Red">Red
+      <br>
+      <input type="checkbox" name="color5" value="White">White
+      <br>
+      <input type="checkbox" name="color6" value="Yellow">Yellow
+      <br><br>
+      <input type="submit">
+    </form>
+  </div>
+
+  <div id="checkbox-large" class="condition">
+    <h4>Checkbox (Large)</h4>
+    <form>
+      <input type="checkbox" name="president1" value="Bush, George H. W.">Bush, George H. W.
+      <br>
+      <input type="checkbox" name="president2" value="Bush, George W.">Bush, George W.
+      <br>
+      <input type="checkbox" name="president3" value="Carter, Jimmy">Carter, Jimmy
+      <br>
+      <input type="checkbox" name="president4" value="Clinton, Bill">Clinton, Bill
+      <br>
+      <input type="checkbox" name="president5" value="Coolidge, Calvin">Coolidge, Calvin
+      <br>
+      <input type="checkbox" name="president6" value="Eisenhower, Dwight">Eisenhower, Dwight
+      <br>
+      <input type="checkbox" name="president7" value="Ford, Gerald">Ford, Gerald
+      <br>
+      <input type="checkbox" name="president8" value="Harding, Warren G.">Harding, Warren G.
+      <br>
+      <input type="checkbox" name="president9" value="Hoover, Herbert">Hoover, Herbert
+      <br>
+      <input type="checkbox" name="president10" value="Johnson, Lyndon B.">Johnson, Lyndon B.
+      <br>
+      <input type="checkbox" name="president11" value="Kennedy, John F.">Kennedy, John F.
+      <br>
+      <input type="checkbox" name="president12" value="Nixon, Richard">Nixon, Richard
+      <br>
+      <input type="checkbox" name="president13" value="Obama, Barack">Obama, Barack
+      <br>
+      <input type="checkbox" name="president14" value="Reagan, Ronald">Reagan, Ronald
+      <br>
+      <input type="checkbox" name="president15" value="Roosevelt, Franklin D.">Roosevelt, Franklin D.
+      <br>
+      <input type="checkbox" name="president16" value="Roosevelt, Theodore">Roosevelt, Theodore
+      <br>
+      <input type="checkbox" name="president17" value="Taft, William Howard">Taft, William Howard
+      <br>
+      <input type="checkbox" name="president18" value="Truman, Harry S.">Truman, Harry S.
+      <br>
+      <input type="checkbox" name="president19" value="Trump, Donald">Trump, Donald
+      <br>
+      <input type="checkbox" name="president20" value="Wilson, Woodrow">Wilson, Woodrow
+      <br>
+      <br>
+      <input type="submit">
+    </form>
+  </div>
+
+  <div id="datalist-small" class="condition">
+    <h4>Datalist (Small)</h4>
+    <form>
+      <input list="colors" name="color">
+      <datalist id="colors">
+        <option value="Black">
+        <option value="Blue">
+        <option value="Orange">
+        <option value="Red">
+        <option value="White">
+        <option value="Yellow">
+      </datalist>
+      <br>
+      <p>No options selected.</p>
+      <input type="submit">
+    </form>
+  </div>
+
+  <div id="datalist-large" class="condition">
+    <h4>Datalist (Large)</h4>
+    <form>
+      <input list="presidents-datalist" name="president">
+      <datalist id="presidents-datalist">
+        <option value="Bush, George H. W.">
+        <option value="Bush, George W.">
+        <option value="Carter, Jimmy">
+        <option value="Clinton, Bill">
+        <option value="Coolidge, Calvin">
+        <option value="Eisenhower, Dwight">
+        <option value="Ford, Gerald">
+        <option value="Harding, Warren G.">
+        <option value="Hoover, Herbert">
+        <option value="Johnson, Lyndon B.">
+        <option value="Kennedy, John F.">
+        <option value="Nixon, Richard">
+        <option value="Obama, Barack">
+        <option value="Reagan, Ronald">
+        <option value="Roosevelt, Franklin D.">
+        <option value="Roosevelt, Theodore">
+        <option value="Taft, William Howard">
+        <option value="Truman, Harry S.">
+        <option value="Trump, Donald">
+        <option value="Wilson, Woodrow">
+      </datalist>
+      <br>
+      <p>No options selected.</p>
+      <input type="submit">
+    </form>
+  </div>
+</div>
+  <footer>
+    <p>William Glockner, Selena Groh, James Hopkins, & Oliver Newland</p>
+    <p>COMP171: Human-Computer Interaction, Spring 2019</p>
+  </footer>
+</div>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
