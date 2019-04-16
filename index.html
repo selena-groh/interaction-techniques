@@ -7,6 +7,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -25,7 +28,7 @@
 
   <div id="checkbox-small" class="condition">
     <h4>Checkbox (Small)</h4>
-    <form>
+    <div>
       <input type="checkbox" name="color1" value="Black">Black
       <br>
       <input type="checkbox" name="color2" value="Blue">Blue
@@ -38,13 +41,13 @@
       <br>
       <input type="checkbox" name="color6" value="Yellow">Yellow
       <br><br>
-      <input type="submit">
-    </form>
+      <button onClick="clearSelected()">Submit</button>
+    </div>
   </div>
 
   <div id="checkbox-large" class="condition">
     <h4>Checkbox (Large)</h4>
-    <form>
+    <div>
       <input type="checkbox" name="president1" value="Bush, George H. W.">Bush, George H. W.
       <br>
       <input type="checkbox" name="president2" value="Bush, George W.">Bush, George W.
@@ -86,14 +89,15 @@
       <input type="checkbox" name="president20" value="Wilson, Woodrow">Wilson, Woodrow
       <br>
       <br>
-      <input type="submit">
-    </form>
+      <button onClick="clearSelected()">Submit</button>
+    </div>
   </div>
 
   <div id="datalist-small" class="condition">
     <h4>Datalist (Small)</h4>
-    <form>
-      <input list="colors" name="color">
+    <div>
+      <input id="autocomplete-small">
+      <!-- <input list="colors" name="color">
       <datalist id="colors">
         <option value="Black">
         <option value="Blue">
@@ -102,42 +106,44 @@
         <option value="White">
         <option value="Yellow">
       </datalist>
-      <br>
-      <p>No options selected.</p>
-      <input type="submit">
-    </form>
+      <br> -->
+      <p id="autocomplete-small-options-selected">No options selected.</p>
+      <button onClick="clearSelected()">Submit</button>
+    </div>
   </div>
 
   <div id="datalist-large" class="condition">
     <h4>Datalist (Large)</h4>
-    <form>
-      <input list="presidents-datalist" name="president">
-      <datalist id="presidents-datalist">
-        <option value="Bush, George H. W.">
-        <option value="Bush, George W.">
-        <option value="Carter, Jimmy">
-        <option value="Clinton, Bill">
-        <option value="Coolidge, Calvin">
-        <option value="Eisenhower, Dwight">
-        <option value="Ford, Gerald">
-        <option value="Harding, Warren G.">
-        <option value="Hoover, Herbert">
-        <option value="Johnson, Lyndon B.">
-        <option value="Kennedy, John F.">
-        <option value="Nixon, Richard">
-        <option value="Obama, Barack">
-        <option value="Reagan, Ronald">
-        <option value="Roosevelt, Franklin D.">
-        <option value="Roosevelt, Theodore">
-        <option value="Taft, William Howard">
-        <option value="Truman, Harry S.">
-        <option value="Trump, Donald">
-        <option value="Wilson, Woodrow">
-      </datalist>
-      <br>
-      <p>No options selected.</p>
-      <input type="submit">
-    </form>
+    <div>
+      <input id="autocomplete-large">
+      <!-- <input list="presidents-datalist" name="president"> -->
+      <!-- select>
+        <option value=""></option>
+        <option value="Bush, George H. W.">Bush, George H. W.</option>
+        <option value="Bush, George W.">Bush, George W.</option>
+        <option value="Carter, Jimmy">Carter, Jimmy</option>
+        <option value="Clinton, Bill">Clinton, Bill</option>
+        <option value="Coolidge, Calvin">Coolidge, Calvin</option>
+        <option value="Eisenhower, Dwight">Eisenhower, Dwight</option>
+        <option value="Ford, Gerald">Ford, Gerald</option>
+        <option value="Harding, Warren G.">Harding, Warren G.</option>
+        <option value="Hoover, Herbert">Hoover, Herbert</option>
+        <option value="Johnson, Lyndon B.">Johnson, Lyndon B.</option>
+        <option value="Kennedy, John F.">Kennedy, John F.</option>
+        <option value="Nixon, Richard">Nixon, Richard</option>
+        <option value="Obama, Barack">Obama, Barack</option>
+        <option value="Reagan, Ronald">Reagan, Ronald</option>
+        <option value="Roosevelt, Franklin D.">Roosevelt, Franklin D.</option>
+        <option value="Roosevelt, Theodore">Roosevelt, Theodore</option>
+        <option value="Taft, William Howard">Taft, William Howard</option>
+        <option value="Truman, Harry S.">Truman, Harry S.</option>
+        <option value="Trump, Donald">Trump, Donald</option>
+        <option value="Wilson, Woodrow">Wilson, Woodrow</option>
+      </select>
+      <br> -->
+      <p id="autocomplete-large-options-selected">No options selected.</p>
+      <button onClick="clearSelected()">Submit</button>
+    </div>
   </div>
 </div>
   <footer>
@@ -147,6 +153,10 @@
 </div>
 
   <script src="js/script.js"></script>
+
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='https://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.7'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </body>
 
 </html>
