@@ -8,7 +8,6 @@ function showCondition(selectedConditionId) {
   });
 
   selectedCondition.style.display = 'block';
-  console.log(selectedCondition);
 }
 
 function clearSelected() {
@@ -17,6 +16,10 @@ function clearSelected() {
   });
   autocompleteSmallSelected = [];
   autocompleteLargeSelected = [];
+  $("#autocomplete-small-input").val('');
+  $("#autocomplete-large-input").val('');
+  $("#autocomplete-small-options-selected").text("Selected: none");
+  $("#autocomplete-large-options-selected").text("Selected: none");
 }
 
 $(function() {
@@ -29,10 +32,29 @@ $(function() {
     "Yellow"
   ];
 
-  $( "#autocomplete-small" ).autocomplete({
+  $( "#autocomplete-small-input" ).autocomplete({
     autoFocus: true,
     delay: 100,
     minLength: 0,
+    select: function (event, ui) {
+      if (autocompleteSmallSelected.includes(ui.item.value)) {
+        autocompleteSmallSelected.splice(autocompleteSmallSelected.indexOf(ui.item.value), 1);
+      } else {
+        autocompleteSmallSelected.push(ui.item.value);
+      }
+
+      if (autocompleteSmallSelected.length < 1) {
+        $("#autocomplete-small-options-selected").text("Selected: none");
+      } else {
+        let selected = 'Selected: ';
+        selected += autocompleteSmallSelected.join('; ');
+        $("#autocomplete-small-options-selected").text(selected);
+      }
+    },
+    close: function(event, ui) {
+      $("#autocomplete-small-input").val('');
+      $("#autocomplete-small-input").blur();
+    },
     source: colors
   }).focus(function(){
     $(this).data("uiAutocomplete").search($(this).val());
@@ -61,13 +83,13 @@ $(function() {
     "Wilson, Woodrow"
   ];
 
-  $( "#autocomplete-large" ).autocomplete({
+  $( "#autocomplete-large-input" ).autocomplete({
     autoFocus: true,
     delay: 100,
     minLength: 0,
     select: function (event, ui) {
-      if (ui.item.value in autocompleteLargeSelected) {
-        autocompleteLargeSelected.filter(el => { return el != ui.item.value});
+      if (autocompleteLargeSelected.includes(ui.item.value)) {
+        autocompleteLargeSelected.splice(autocompleteLargeSelected.indexOf(ui.item.value), 1);
       } else {
         autocompleteLargeSelected.push(ui.item.value);
       }
@@ -81,7 +103,8 @@ $(function() {
       }
     },
     close: function(event, ui) {
-      $("#autocomplete-large").val('');
+      $("#autocomplete-large-input").val('');
+      $("#autocomplete-large-input").blur();
     },
     source: presidents
   }).focus(function(){
